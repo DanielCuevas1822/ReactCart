@@ -8,13 +8,9 @@ const ShirtList = (props) => {
     <section className="main__list">
       <h2 className="list__title">Listado de Camisetas</h2>
       <div className="list__content">
-        {items ? (
-          <React.Fragment>
-            {items.map((item, index) => (
-              <Shirt key={index} data={item} />
-            ))}
-          </React.Fragment>
-        ) : null}
+        {items
+          ? items.map((item, index) => <Shirt key={index} data={item} />)
+          : null}
       </div>
     </section>
   );
