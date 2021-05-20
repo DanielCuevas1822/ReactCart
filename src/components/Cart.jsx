@@ -1,6 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
+import CartItem from "./CartItem";
 
-const Cart = () => {
+const Cart = (props) => {
+  const { cart } = props;
   return (
     <section className="main__cart">
       <h2 className="cart__title">Cesta de la compra</h2>
@@ -15,16 +18,17 @@ const Cart = () => {
           </tr>
         </tbody>
         <tbody>
-          <tr>
-            <td>lol</td>
-            <td>lol</td>
-            <td>lol</td>
-            <td>lol</td>
-          </tr>
+          {cart
+            ? cart.map((item, index) => <CartItem key={index} data={item} />)
+            : null}
         </tbody>
       </table>
     </section>
   );
 };
 
-export default Cart;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps)(Cart);

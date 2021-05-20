@@ -33,8 +33,30 @@ const cartReducer = (state = [], action) => {
       }
     }
     case REMOVE_FROM_CART: {
-      return state;
+      const found = state.cart.find(
+        (item) => item.name === action.payload.name
+      );
+      if (found && found.quantity > 1) {
+        return {
+          ...state,
+          cart: state.cart.map((item) => {
+            if (item.name === action.payload.name) {
+              return {
+                ...item,
+                quantity: item.quantity - 1,
+              };
+            }
+            return item;
+          }),
+        };
+      } else {
+        return {
+          ...state,
+          cart: state.cart.filter((item) => item.name !== action.payload.name),
+        };
+      }
     }
+
     default:
       return state;
   }
