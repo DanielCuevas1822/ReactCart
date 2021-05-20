@@ -1,0 +1,12 @@
+.page__footer {
+
+  // @include desktop() {
+  //   position: fixed;
+  //   width: 100%;
+  //   bottom: 0;
+  // }
+
+  padding: 1rem;
+  color: $light;
+  background-color: $color-primary;
+}

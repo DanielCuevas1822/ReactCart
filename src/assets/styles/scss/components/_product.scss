@@ -1,0 +1,33 @@
+.list__product {
+    border: rem(3) solid $color-primary;
+    border-radius: rem(10);    
+    padding: rem(10);
+    background-color: $light;
+
+    @include mobil(){
+        margin-bottom: rem(10);
+    }
+}
+
+.product {
+    &__image {
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 100%;
+            display: block;
+
+            @include mobil(){
+                max-height: rem(300);
+                max-width: rem(300);
+            }
+        }
+    }
+    &__content {
+        text-align: center;
+        p  {
+            margin-bottom: rem(10);
+        }
+    }
+}

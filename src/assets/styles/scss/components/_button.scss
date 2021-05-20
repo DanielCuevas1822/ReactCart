@@ -1,0 +1,12 @@
+.btn {
+    @include button-style();
+
+    &--add, &--submit, &--entendido{
+        padding: rem(10) rem(20);
+    }
+
+    &--product {
+        width: rem(25);
+        height: rem(20);
+    }
+}

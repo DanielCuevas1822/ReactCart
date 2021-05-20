@@ -1,0 +1,94 @@
+.page__main {
+
+  min-height: 85vh;
+
+  @include desktop() {
+    padding: 2rem;
+  }
+
+  @include desktop() {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  h2 {
+    margin-bottom: rem(10);
+  }
+}
+
+.main {
+
+  &__list {
+    grid-row: 1/3;
+    margin: rem(10);
+
+    .list__content {
+      @include tablet() {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: rem(20);
+      }
+
+    }
+  }
+
+  &__cart {
+    margin: rem(10);
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: $light;
+    }
+
+    th {
+      background-color: $color-primary;
+      border: solid rem(1) $dark;
+      color: $light;
+      padding: rem(8);
+    }
+
+    td {
+      padding: rem(10);
+      text-align: center;
+      border: solid rem(1) $dark;
+
+      p,
+      button {
+        @include tablet() {
+          display: inline;
+        }
+
+      }
+    }
+  }
+
+  &__shipping {
+    margin: rem(10);
+
+    form {
+      label {
+        display: block;
+      }
+
+      input[type="text"] {
+        background-color: $dark;
+        border: none;
+        border-radius: rem(11);
+        padding: rem(10);
+        font-weight: bold;
+        margin-bottom: rem(10);
+      }
+
+      input.requiered {
+        border: red 2px solid;
+      }
+
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
