@@ -1,12 +1,20 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cartActions";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  EMPTY_CART,
+} from "../actions/cartActions";
+
 const cartReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TO_CART: {
+      let new_state = state;
+
       const found = state.cart.find(
         (item) => item.name === action.payload.name
       );
+
       if (found) {
-        return {
+        new_state = {
           ...state,
           cart: state.cart.map((item) => {
             if (item.name === action.payload.name) {
@@ -19,7 +27,7 @@ const cartReducer = (state = [], action) => {
           }),
         };
       } else {
-        return {
+        new_state = {
           ...state,
           cart: [
             ...state.cart,
@@ -31,13 +39,19 @@ const cartReducer = (state = [], action) => {
           ],
         };
       }
+      localStorage.setItem("cart", JSON.stringify(new_state.cart));
+      return new_state;
     }
+
     case REMOVE_FROM_CART: {
+      let new_state = state;
+
       const found = state.cart.find(
         (item) => item.name === action.payload.name
       );
+
       if (found && found.quantity > 1) {
-        return {
+        new_state = {
           ...state,
           cart: state.cart.map((item) => {
             if (item.name === action.payload.name) {
@@ -50,11 +64,21 @@ const cartReducer = (state = [], action) => {
           }),
         };
       } else {
-        return {
+        new_state = {
           ...state,
           cart: state.cart.filter((item) => item.name !== action.payload.name),
         };
       }
+      localStorage.setItem("cart", JSON.stringify(new_state.cart));
+      return new_state;
+    }
+
+    case EMPTY_CART: {
+      localStorage.removeItem("cart");
+      return {
+        ...state,
+        cart: [],
+      };
     }
 
     default:
