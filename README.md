@@ -8,6 +8,22 @@ _Concepts learned in this proyect:_
 * LocalStorage
 * React Js
 
+# Prerequisites 📋
+_Install [Git](https://git-scm.com/) with:_
+```
+$ sudo apt install git
+```
+
+_Install [NodeJs](https://nodejs.org/en/) Js with:_
+```
+$ sudo apt install nodejs
+```
+
+_Install [NPM](https://www.npmjs.com/) with:_
+```
+$ sudo apt install npm
+```
+
 # Start 🚀
 
 _Clone this repo_
