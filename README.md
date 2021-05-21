@@ -1,4 +1,4 @@
-# CarritoCompras
+# ReactCart
 
 _Simulation of a shopping cart whith React Js using Axios and LocalStorage._
 
@@ -12,11 +12,11 @@ _Concepts learned in this proyect:_
 
 _Clone this repo_
 ```
-$ git clone https://github.com/DanielCuevas1822/CarritoCompras.git
+$ git clone https://github.com/DanielCuevas1822/ReactCart.git
 ```
 Use following commands:
 ```
-$ cd CarritoCompras
+$ cd ReactCart
 ```
 ```
 $ npm install
@@ -27,7 +27,7 @@ $ npm start
 
 # URL 📌
 
-_https://danielcuevas1822.github.io/CarritoCompras/_
+_https://danielcuevas1822.github.io/ReactCart/_
 
 # Thanks 🎁
 
