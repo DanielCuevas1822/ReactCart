@@ -23,17 +23,17 @@ const CartItem = (props) => {
       <td>{price}</td>
       <td>
         <button
-          onClick={() => handleIncrementClick(props.data)}
-          className="btn btn--product"
-        >
-          +
-        </button>
-        {quantity}
-        <button
           onClick={() => handleDecrementClick(props.data)}
           className="btn btn--product"
         >
           -
+        </button>
+        {quantity}
+        <button
+          onClick={() => handleIncrementClick(props.data)}
+          className="btn btn--product"
+        >
+          +
         </button>
       </td>
       <td>{quantity * price}</td>
