@@ -8,7 +8,11 @@ export const useInitialState = () => {
     axios
       .get("https://beta.adalab.es/ejercicios-extra/api/eshop/v2/cart.json")
       .then((response) => {
-        setInitialState({ items: response.data.cart.items, cart: [] });
+        const local_data = JSON.parse(localStorage.getItem("cart"));
+        setInitialState({
+          items: response.data.cart.items,
+          cart: local_data ? local_data : [],
+        });
       })
       .catch((error) => {
         console.log(error);
