@@ -1,9 +1,10 @@
 # ReactCart
 
-_Simulation of a shopping cart whith React Js using Axios and LocalStorage._
+_Simulation of a shopping cart whith React Js using Axios,LocalStorage and Redux._
 
 _Concepts learned in this proyect:_
 
+* Redux
 * Axios
 * LocalStorage
 * React Js
